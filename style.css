@@ -34,3 +34,23 @@ body {
   color: #ccc;
   margin-bottom: 20px;
 }
+.logo {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.coming-soon-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto;
+}
