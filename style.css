@@ -21,6 +21,8 @@ body {
 }
 
 .brand {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  text-transform: lowercase;
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -32,32 +34,3 @@ body {
   color: #ccc;
   margin-bottom: 20px;
 }
-
-.coming-soon {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-top: 10px;
-}
-
-/* Optional form styling
-form {
-  margin-top: 30px;
-}
-
-input {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #fff;
-  color: #0A0F2C;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-}
-*/
