@@ -22,7 +22,7 @@ body {
   position: absolute;
   top: 30px;
   left: 40px;
-  width: 120px;
+  width: 160px; /* increased from 120px */
 }
 
 .container {
