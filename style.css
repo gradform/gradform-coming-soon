@@ -1,57 +1,78 @@
-* {
+/* Reset & base */
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #0A0F2C, #1D223C); /* dark premium smooth gradient */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
-body {
-  margin: 0;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  background: linear-gradient(to right, #0a0f2c, #000000);
-  color: #ffffff;
-  height: 100vh;
+/* Header logo */
+.header {
+  padding: 24px;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  height: 48px;
+}
+
+/* Container content */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.container {
   text-align: center;
-  max-width: 90%;
   padding: 20px;
 }
 
-.brand {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  text-transform: lowercase;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.tagline {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-.logo {
-  max-width: 300px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
+/* Main text */
 .coming-soon-text {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
+/* Description fade-in animation */
 .description {
-  font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc;
+  font-size: 20px;
+  font-weight: 400;
   max-width: 600px;
-  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 0.5s forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coming-soon-text {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .logo {
+    height: 36px;
+  }
+
+  .header {
+    padding: 16px;
+  }
 }
