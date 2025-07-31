@@ -5,9 +5,10 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0A0F2C, #2A2F4F);
-  color: #fff;
+  margin: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  background: linear-gradient(to right, #0a0f2c, #000000);
+  color: #ffffff;
   height: 100vh;
   display: flex;
   align-items: center;
