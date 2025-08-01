@@ -7,6 +7,8 @@
   <link rel="icon" type="image/x-icon" href="images/favicon-blue.ico" />
 
   <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Neue+Haas+Grotesk+Text+Pro&display=swap" rel="stylesheet">
 
   <!-- Styles -->
@@ -24,11 +26,13 @@
       background-size: 400% 400%;
       animation: gradientMove 15s ease infinite;
       color: #ffffff;
-      font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
+      font-family: 'Inter', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
     }
 
     @keyframes gradientMove {
@@ -89,23 +93,25 @@
     }
 
     .main h1 {
-      font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
+      font-family: 'Bricolage Grotesque', sans-serif;
       font-size: 3.5rem;
       font-weight: 500;
       margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
     .main p {
+      font-family: 'Bricolage Grotesque', sans-serif;
       font-size: 1.25rem;
+      font-weight: 400;
       opacity: 0;
       animation: fadeIn 2s ease-in-out forwards;
       animation-delay: 1s;
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .footer {
@@ -151,8 +157,8 @@
 
   <!-- Main Section -->
   <div class="main">
-    <h1>We Are Building Something Exciting! Stay Tuned!</h1>
-    <p>We are working on something special</p>
+    <h1>Coming Soon!</h1>
+    <p>We Are Building Something Special. Stay Tuned!</p>
   </div>
 
   <!-- Footer -->
