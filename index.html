@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gradform – Coming Soon</title>
-  <!-- Favicon (Make sure the path and file extension match exactly) -->
-<link rel="icon" type="image/x-icon" href="images/favicon-blue.ico" />
+  <link rel="icon" type="image/x-icon" href="images/favicon-blue.ico" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Neue+Haas+Grotesk+Text+Pro&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Neue+Haas+Grotesk+Text+Pro&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <style>
     * {
       margin: 0;
@@ -16,7 +18,9 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0000cd, #003e80, #1a5d9c, #00bfff);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0000CD, #003E80, #1A5D9C, #00BFFF);
       background-size: 400% 400%;
       animation: gradientMove 15s ease infinite;
       color: #ffffff;
@@ -33,23 +37,61 @@
       100% { background-position: 0% 50%; }
     }
 
+    .animated-shape {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 150px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+      opacity: 0.4;
+      border-radius: 50%;
+      animation: float 10s ease-in-out infinite alternate;
+      filter: blur(20px);
+    }
+
+    .animated-shape.left {
+      left: -80px;
+      animation-delay: 0s;
+    }
+
+    .animated-shape.right {
+      right: -80px;
+      animation-delay: 5s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(20px) scale(1.1); }
+      100% { transform: translateY(-10px) scale(1.05); }
+    }
+
     .header {
       padding: 2rem;
     }
 
     .logo {
-      height: 60px;
+      height: 80px;
+      animation: logoIntro 1.5s ease-out forwards;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    @keyframes logoIntro {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .main {
       text-align: center;
-      margin-top: -60px;
       padding: 2rem;
     }
 
     .main h1 {
-      font-family: 'Bricolage Grotesque', sans-serif;
-      font-size: 4rem;
+      font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 500;
       margin-bottom: 1rem;
     }
 
@@ -85,25 +127,35 @@
 
     @media (max-width: 600px) {
       .main h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
       }
       .main p {
         font-size: 1rem;
+      }
+      .animated-shape {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Ambient Shapes -->
+  <div class="animated-shape left"></div>
+  <div class="animated-shape right"></div>
+
+  <!-- Header -->
   <div class="header">
     <img src="images/logo-large.png" alt="Gradform Logo" class="logo" />
   </div>
 
+  <!-- Main Section -->
   <div class="main">
-    <h1>Coming Soon!</h1>
+    <h1>We Are Building Something Exciting! Stay Tuned!</h1>
     <p>We are working on something special</p>
   </div>
 
+  <!-- Footer -->
   <div class="footer">
     <a href="https://www.instagram.com/gradform/" target="_blank">Instagram</a>
     <a href="https://x.com/teamgradform" target="_blank">Twitter</a>
