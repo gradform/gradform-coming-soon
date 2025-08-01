@@ -1,26 +1,27 @@
-/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Bricolage+Grotesque:wght@500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500&display=swap');
-
-body {
+* {
   margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #87ceeb, #1e90ff, #0000cd);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  font-family: 'Inter', sans-serif;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes gradientAnimation {
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0f2c, #0000cd);
+  background-size: 200% 200%;
+  animation: gradientFlow 12s ease infinite;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+@keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
@@ -30,77 +31,66 @@ body {
   position: absolute;
   top: 30px;
   left: 40px;
-  height: 60px;
+  height: 50px;
+  z-index: 10;
+}
+
+.content {
+  text-align: center;
   z-index: 2;
 }
 
 h1 {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 32px;
+  font-size: 3rem;
   font-weight: 500;
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease-in-out;
-  z-index: 2;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.8s ease-out both;
 }
 
 p {
-  font-size: 18px;
-  max-width: 600px;
-  line-height: 1.6;
-  font-weight: 400;
-  animation: fadeIn 3s ease-in-out;
-  z-index: 2;
+  font-size: 1.1rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  opacity: 0.85;
+  animation: fadeIn 2.2s ease-out both;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* SVG Ribbon Styling */
+/* Ribbons */
 .ribbon {
   position: absolute;
-  top: 0;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.7;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), transparent);
+  border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;
+  animation: morph 18s infinite linear;
+  filter: blur(60px);
+  opacity: 0.4;
 }
 
-.ribbon.left-ribbon {
-  left: 0;
-  transform: scaleX(-1);
+.ribbon-left {
+  top: -100px;
+  left: -250px;
+  background: linear-gradient(45deg, #ffffff33, #0000cd44);
 }
 
-.ribbon.right-ribbon {
-  right: 0;
+.ribbon-right {
+  bottom: -100px;
+  right: -250px;
+  background: linear-gradient(135deg, #ffffff33, #0000cd44);
 }
 
-/* Glass Abstract Shapes */
-.glass-shape {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 50%;
-  z-index: 1;
-  animation: float 6s ease-in-out infinite alternate;
-}
-
-.shape1 {
-  top: 10%;
-  left: 5%;
-  animation-delay: 0s;
-}
-
-.shape2 {
-  bottom: 15%;
-  right: 10%;
-  animation-delay: 2s;
-}
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-20px); }
+@keyframes morph {
+  0%, 100% {
+    border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    border-radius: 70% 30% 60% 40% / 30% 70% 40% 60%;
+    transform: rotate(180deg) scale(1.2);
+  }
 }
