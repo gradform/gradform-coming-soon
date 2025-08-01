@@ -13,13 +13,21 @@
     }
 
     body {
-      background-color: #0A0F2C;
+      background: linear-gradient(135deg, #0000cd, #00bfff, #1e3c72);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
       color: #ffffff;
       font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .header {
