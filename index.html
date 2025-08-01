@@ -2,85 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gradform – Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Neue+Haas+Grotesk+Text+Pro&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      height: 100vh;
+      background-color: #0A0F2C;
+      color: #ffffff;
+      font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, skyblue, #0000cd, mediumblue);
-      color: white;
-      text-align: center;
+      min-height: 100vh;
     }
 
-    header {
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      align-items: center;
+    .header {
+      padding: 2rem;
     }
 
     .logo {
-      height: 50px;
-      margin-left: 30px;
+      height: 60px;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: 4rem;
-      font-weight: bold;
-    }
-
-    footer {
-      padding: 20px;
+    .main {
       text-align: center;
+      margin-top: -60px;
+      padding: 2rem;
+    }
+
+    .main h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .main p {
+      font-size: 1.25rem;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
       font-size: 0.9rem;
     }
 
-    .social-links a {
-      color: white;
-      margin: 0 10px;
+    .footer a {
+      color: #ffffff;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 1rem;
+      transition: opacity 0.3s;
     }
 
-    .social-links a:hover {
-      text-decoration: underline;
+    .footer a:hover {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      .main h1 {
+        font-size: 2.5rem;
+      }
+      .main p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Gradform Logo" class="logo">
-  </header>
 
-  <main>
+  <div class="header">
+    <img src="images/logo-large.png" alt="Gradform Logo" class="logo" />
+  </div>
+
+  <div class="main">
     <h1>Coming Soon!</h1>
-  </main>
+    <p>We are working on something special</p>
+  </div>
 
-  <footer>
-    <div class="social-links">
-      <a href="https://www.instagram.com/gradform/" target="_blank">Instagram</a>
-      <a href="https://x.com/teamgradform" target="_blank">Twitter</a>
-    </div>
-    <p>© 2025 Gradform. All rights reserved.</p>
-  </footer>
+  <div class="footer">
+    <a href="https://www.instagram.com/gradform/" target="_blank">Instagram</a>
+    <a href="https://x.com/teamgradform" target="_blank">Twitter</a>
+    <div style="margin-top: 0.5rem;">© 2025 Gradform</div>
+  </div>
+
 </body>
 </html>
