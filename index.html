@@ -41,36 +41,45 @@
       100% { background-position: 0% 50%; }
     }
 
-    .animated-shape {
+    .glass-shape {
       position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 150px;
-      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+      top: 50%;
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(135deg, rgba(0,0,205,0.5), rgba(65,105,225,0.3), rgba(30,144,255,0.2));
+      backdrop-filter: blur(20px);
+      border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
       opacity: 0.4;
-      border-radius: 50%;
-      animation: float 10s ease-in-out infinite alternate;
-      filter: blur(20px);
+      transform: translateY(-50%);
+      z-index: 1;
+      animation: floatPulse 20s ease-in-out infinite alternate;
     }
 
-    .animated-shape.left {
-      left: -80px;
+    .glass-shape.left {
+      left: -120px;
       animation-delay: 0s;
     }
 
-    .animated-shape.right {
-      right: -80px;
-      animation-delay: 5s;
+    .glass-shape.right {
+      right: -120px;
+      animation-delay: 10s;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(20px) scale(1.1); }
-      100% { transform: translateY(-10px) scale(1.05); }
+    @keyframes floatPulse {
+      0% {
+        transform: translateY(-50%) scale(1);
+      }
+      50% {
+        transform: translateY(-45%) scale(1.05) rotate(2deg);
+      }
+      100% {
+        transform: translateY(-55%) scale(0.98) rotate(-2deg);
+      }
     }
 
     .header {
       padding: 2rem;
+      z-index: 5;
     }
 
     .logo {
@@ -90,6 +99,8 @@
     .main {
       text-align: center;
       padding: 2rem;
+      position: relative;
+      z-index: 5;
     }
 
     .main h1 {
@@ -118,6 +129,8 @@
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
+      z-index: 5;
+      position: relative;
     }
 
     .footer a {
@@ -138,7 +151,7 @@
       .main p {
         font-size: 1rem;
       }
-      .animated-shape {
+      .glass-shape {
         display: none;
       }
     }
@@ -147,8 +160,8 @@
 <body>
 
   <!-- Ambient Shapes -->
-  <div class="animated-shape left"></div>
-  <div class="animated-shape right"></div>
+  <div class="glass-shape left"></div>
+  <div class="glass-shape right"></div>
 
   <!-- Header -->
   <div class="header">
