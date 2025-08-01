@@ -94,3 +94,24 @@ p {
     transform: rotate(180deg) scale(1.2);
   }
 }
+.footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 5;
+}
+
+.footer a {
+  margin: 0 12px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
+}
